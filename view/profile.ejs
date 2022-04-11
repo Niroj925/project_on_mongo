@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mongodb_project</title>
+    </head>
+    <body>
+     <div class="items">
+                <form action="/delete" method="post">
+            <% content.forEach(function(item){ %>
+                <div class="item-box">
+                    <input type="checkbox" name="cbox" value="<%=item._id%>" onChange="this.form.submit()">
+                    <p style="display:inline"><%=item.msg%></p>
+                </div>
+              <% } )%>
+                </form> 
+            <form class="form" action="/" method="post">
+                <input type="text" name="newItem" placeholder="add items...">
+                <button type="submit" name="page" value="ok">submit</button>
+            </form>
+        </div>  
+    </body>
+</html>
